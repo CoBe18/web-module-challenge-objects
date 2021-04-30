@@ -40,7 +40,7 @@ function createMenuItem(name, price, category) {
 }
 
 createMenuItem('lunch', 'tacos', 8);
-createMenuItem('Chia Tea', 4.50, 'Drinks')
+createMenuItem('Chai Tea', 4.50, 'Drinks')
 createMenuItem('Bread Pudding', 9, 'Dessert')
 createMenuItem('Cheese Burger', 12, 'Lunch')
 createMenuItem("Filet Mignon", 25, 'Dinner')
