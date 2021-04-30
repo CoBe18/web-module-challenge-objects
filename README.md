@@ -1,3 +1,6 @@
+
+This is the first commit
+
 ## Advanced CSS and Intro to JavaScript
 
 ## Objects
