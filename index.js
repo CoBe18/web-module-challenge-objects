@@ -88,23 +88,23 @@ export const burger = {
 
 
 ///////////////Reviews (MVP)///////////////////
-/*const reviews = [
-    {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
-    {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
-    {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
-    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly recommend."},
-    {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
-    {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
-    {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
-    {name: "Reyna", rating: 3.5, feedback: ""},
+const reviews = [
+  {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
+  {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
+  {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
+  {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
+  {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
+  {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
+  {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
+  {name: "Reyna", rating: 3.5, feedback: ""},
 ]
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-Using the reviews array above:
-  1. log only Julius' feedback to the console - no function needed 
+ /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
+  Using the reviews array above:
+  1. log only Julius' feedback to the console - no function needed*/ 
 
 
-console.log(reviews[5].feedback);
+  console.log(reviews[5].feedback)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -113,9 +113,21 @@ Using the reviews array above do the following: (no function needed)
   2. log the whole array to the console, make sure the new review is inside of it   
 */
 
-/*reviews.push({name: 'CoBe', rating: 3.5, feedback: 'What a delight to get a meal served just as I want it!'});
+/*reviews.unshift({
+  name:'Cindy',
+  rating: 4,
+  feedback: 'What a delight to get a meal served just as I want it. I will be back!'
+});
 
-console.log(reviews)
+console.log(reviews)*/
+
+function addReview( arr, name, rating, feedback) {
+  arr.push({name, rating, feedback})
+  return arr
+}
+console.log(addReview(reviews, 'Cindy', 4, 'What a delight to get a meal served just as I want it. I will be back!'))
+
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
@@ -124,7 +136,10 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
 */
 
 
-
+for (let i=0; i < reviews.length; i++){
+  if (reviews[i].name === 'Reyna') {reviews[i].splice = 'This place is chill with really cool people; great for getting work done on weekdays'}
+}
+console.log(reviews)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -138,12 +153,17 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-/*function getReviewByIndex(Your code here) {
-  Your code here
-}/*
+function getReviewByIndex(reviews, index) {
+  for(i = 0; i < reviews.length; i++) {
+    if ( i === index) {
+      return `${reviews[i].name} gave the restaurant a ${reviews[i].rating} star review and their feedback was: ${reviews[i].feedback}.`
+    }
+  }
+}
 
+console.log(getReviewByIndex(reviews, 0))
 
-  
+   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -157,9 +177,11 @@ Use the getLastReview function below to do the following:
 */
 
 
-/*function getLastReview(Your code here) {
-  Your code here
-} /*
+function getLastReview(arr) {
+  return `${arr[arr.length-1].name} gave the restaurant a ${arr[arr.length-1].rating} star review, and their feedback was: ${arr[arr.length-1].feedback}`
+}
+
+getLastReview(reviews);
 
 
 
@@ -176,12 +198,22 @@ Use the getReviewsByRating function below to do the following:
     {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
     {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly recommend."},
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}
-  ]
+  ]*/
 
+let newArr = []
+function getReviewByRating (arr, range) {
 
- /*function getReviewByRating( code here ) {
-     code here 
-  }/*
+  for (let i = 0; i < arr.length; i++) {
+    if (Math.floor(arr[i].rating) === range) {
+      newArr.push(arr[i])
+    };
+  }
+
+  console.log(newArr);
+  return newArr
+}
+console.log("=====");
+getReviewByRating(reviews, 4);
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
