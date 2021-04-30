@@ -75,9 +75,9 @@ Using the burger object below do the following:
 */
 
 export const burger = {
-  name: "Burger", 
+  name: 'Burger', 
   price: 18, 
-  category: "Lunch", 
+  category: 'Lunch', 
   discount: function(person){
     if(person === 'teacher' || person === 'student'){
       return this.price - (this.price*.25)
