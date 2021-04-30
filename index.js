@@ -18,7 +18,7 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 const taco = {name: 'tacos', price: 8, category: 'Lunch'}
-const hotTea = {name: 'Hot Tea', price: 4, category: 'Drinks'};
+const hotTea = {name: 'Chai  Tea', price: 4, category: 'Drinks'};
 const dessert = {name: 'Bread Pudding', price: 9, category: 'Dessert'};
 const cBurger = {name: 'Cheese Burger', price: 12, category: 'Lunch'};
 const steak = {name: 'Filet Mignon', price: 25, category: 'Dinner'}
