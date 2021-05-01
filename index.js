@@ -92,7 +92,7 @@ const reviews = [
   {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
   {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
   {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
-  {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
+  {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly recommend."},
   {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
   {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
   {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
@@ -153,18 +153,17 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-
-function getReviewByIndex(reviews, index) {
-  for(i = 0; i < reviews.length; i++) {
-    if ( i === index) {
-      return `${reviews[i].name} gave the restaurant a ${reviews[i].rating} star review and their feedback was: ${reviews[i].feedback}.`
-    }
-  }
-}
-
-console.log(getReviewByIndex(reviews, 0))
-
+function getReviewByIndex( arr, index) {
+  // for(let i = 0; i < reviews.length; i++){
+  //   if ( reviews[i] === index){ 
+      return  `${arr[index].name} gave the restaurant a ${arr[index].rating} star review and their feedback was: ${arr[index].feedback}.`
    
+
+console.log(getReviewByIndex(reviews))
+
+// function getReviewByIndex(array, num) {
+//   return `${array[num].name} gave the restaurant a ${array[num].rating} star review, and their feedback was: ${array[num].feedback}`;
+// }  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -178,13 +177,18 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(arr) {
-  return `${arr[arr.length-1].name} gave the restaurant a ${arr[arr.length-1].rating} star review, and their feedback was: ${arr[arr.length-1].feedback}`
-}
+// function getLastReview(arr) {
+//   return `${arr[arr.length-1].name} gave the restaurant a ${arr[arr.length-1].rating} star review, and their feedback was: ${arr[arr.length-1].feedback}`
+// }
 
-getLastReview(reviews);
+// getLastReview(reviews);
 
+// function getLastReview(newReviews) {
+//   let review = newReviews[newReviews.length - 1];
+//   return `${review.name} gave the restaurant a ${review.rating} star review, and their feedback was: ${review.feedback}`;
+// }
 
+// getLastReview(reviews);
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
@@ -201,19 +205,19 @@ Use the getReviewsByRating function below to do the following:
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}
   ]*/
 
-let newArr = []
+ let newArr = []
 function getReviewByRating (arr, range) {
 
   for (let i = 0; i < arr.length; i++) {
-    if (Math.floor(arr[i].rating) === range) {
+    if (Math.floor(arr[i].rating) == range) {
       newArr.push(arr[i])
-    };
+    }
   }
 
   console.log(newArr);
   return newArr
 }
-console.log("=====");
+console.log("==");
 getReviewByRating(reviews, 4);
 
   
@@ -268,7 +272,6 @@ function foo(){
 export default{
   foo,
   createMenuItem,
-
+  getReviewByIndex,
+  getLastReview,
 }
-/*getReviewByIndex,
-getLastReview,*/
