@@ -177,18 +177,18 @@ Use the getLastReview function below to do the following:
 */
 
 
-// function getLastReview(arr) {
-//   return `${arr[arr.length-1].name} gave the restaurant a ${arr[arr.length-1].rating} star review, and their feedback was: ${arr[arr.length-1].feedback}`
-// }
+function getLastReview(arr) {
+  return `${arr[arr.length-1].name} gave the restaurant a ${arr[arr.length-1].rating} star review, and their feedback was: ${arr[arr.length-1].feedback}`
+}
 
-// getLastReview(reviews);
+getLastReview(reviews);
 
-// function getLastReview(newReviews) {
-//   let review = newReviews[newReviews.length - 1];
-//   return `${review.name} gave the restaurant a ${review.rating} star review, and their feedback was: ${review.feedback}`;
-// }
+function getLastReview(newReviews) {
+  let review = newReviews[newReviews.length - 1];
+  return `${review.name} gave the restaurant a ${review.rating} star review, and their feedback was: ${review.feedback}`;
+}
 
-// getLastReview(reviews);
+getLastReview(reviews);
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
@@ -208,17 +208,16 @@ Use the getReviewsByRating function below to do the following:
  let newArr = []
 function getReviewByRating (arr, range) {
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 4; i < arr.length; i++) {
     if (Math.floor(arr[i].rating) == range) {
       newArr.push(arr[i])
     }
   }
 
-  console.log(newArr);
+  console.log(getReviewByRating(arr[i]));
   return newArr
 }
-console.log("==");
-getReviewByRating(reviews, 4);
+
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
